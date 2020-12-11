@@ -12,7 +12,7 @@ public class Analog extends JPanel {
     public void drawCircle(Graphics g){
         int cornerX= (this.clock.getCenter().getX()-this.clock.getRadius());
         int cornerY= (this.clock.getCenter().getY()-this.clock.getRadius());
-        g.setColor(new Color(0,0,0));// setting the color to black
+        g.setColor(Color.RED);// setting the color to black
         g.fillOval(cornerX,cornerY, this.clock.getRadius()*2,this.clock.getRadius()*2);
         g.setColor(Color.WHITE);
         g.fillOval(cornerX+AnalogClock.getPadding()/2, cornerY+AnalogClock.getPadding()/2,(this.clock.getRadius()-AnalogClock.getPadding()/2)*2,(this.clock.getRadius()-AnalogClock.getPadding()/2)*2);
