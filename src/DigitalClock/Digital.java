@@ -24,15 +24,12 @@ public class Digital extends JPanel {
         String time = getTime();
         Point center = new Point(this.getWidth()/2, this.getHeight()/2);
         Font clockFont = new Font("Times New Roman", Font.BOLD , this.getHeight()/5);
-        FontMetrics clockMetrics = this.getFontMetrics(clockFont);
-        g.setFont( clockFont );
-        g.setColor(Color.WHITE);
         int padding = 10;
-        System.out.println(center.toString());
-        int xPos = center.getX() - clockMetrics.stringWidth(time)/2;
-        int yPos = center.getY() + clockMetrics.getAscent()/2;
-        int height = clockMetrics.getAscent()+clockMetrics.getDescent();
-        g.drawRect(xPos-padding/2,center.getY()-height/2, clockMetrics.stringWidth(time)+padding, height);
+        int[] drawData = Default.drawText(g,this, center, padding, clockFont, time, Color.WHITE);
+        int xPos = center.getX() - drawData[0]/2;
+        int yPos = center.getY() + drawData[1]/2;
+        int height = drawData[1]+drawData[2];
+        g.drawRect(xPos-padding/2,center.getY()-height/2, drawData[0]+padding, height);
         g.drawString(time, xPos,yPos);
     }
 }

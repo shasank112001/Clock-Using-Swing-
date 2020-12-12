@@ -1,6 +1,7 @@
 package test;
 
 import AnalogClock.Analog;
+import Date.DatePanel;
 import DigitalClock.Digital;
 
 import javax.swing.*;
@@ -33,7 +34,10 @@ public class AnalogTest {
 
         Digital clock = new Digital();
         frame.setLayout(new BorderLayout());
-        frame.add(clock);
+        frame.add(clock, BorderLayout.CENTER);
+        DatePanel date = new DatePanel();
+        date.setPreferredSize(new Dimension (frame.getWidth(),frame.getHeight()/5));
+        frame.add(date, BorderLayout.SOUTH);
         int interval=650;//the interval of the timer is set to 1ms.
         ActionListener clockTime=new ActionListener()
         {
