@@ -1,4 +1,4 @@
-package Clock;
+package AnalogClock;
 
 public class AnalogClock {
 

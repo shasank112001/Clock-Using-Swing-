@@ -1,4 +1,4 @@
-package Clock;
+package AnalogClock;
 
 public class Point {
     int x, y;
@@ -21,5 +21,10 @@ public class Point {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    @Override
+    public String toString(){
+        return "("+this.getX()+","+this.getY()+")";
     }
 }

@@ -1,4 +1,4 @@
-package Clock;
+package AnalogClock;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Calendar;
@@ -60,6 +60,9 @@ public class Analog extends JPanel {
     }
     public void paintComponent(Graphics g)
     {
+        super.paintComponent(g);
+        g.setColor(Default.backGroundColor);
+        g.fillRect(0,0,this.getWidth(),this.getHeight());
         this.clock = new AnalogClock(this.getHeight(),this.getWidth());
         this.drawCircle(g);
         this.drawMarkings(g);

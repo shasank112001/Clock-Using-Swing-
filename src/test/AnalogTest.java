@@ -1,12 +1,12 @@
 package test;
 
-import Clock.Analog;
+import AnalogClock.Analog;
+import DigitalClock.Digital;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
 
 
 public class AnalogTest {
@@ -23,7 +23,7 @@ public class AnalogTest {
             e.printStackTrace();
         }
         JFrame frame=new JFrame();
-        frame.setTitle("Clock");
+        frame.setTitle("AnalogClock");
         Toolkit tk=Toolkit.getDefaultToolkit();
         Dimension d= tk.getScreenSize();
         frame.setSize(d.width/2, d.height/2);// setting the screen size as half of the width and height of the screen size
@@ -31,7 +31,7 @@ public class AnalogTest {
         frame.setBackground(new Color(0,0,0));//setting the background colour for the window
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// Setting the default close operation
 
-        Analog clock = new Analog();
+        Digital clock = new Digital();
         frame.setLayout(new BorderLayout());
         frame.add(clock);
         int interval=650;//the interval of the timer is set to 1ms.
