@@ -24,7 +24,6 @@ public class DatePanel extends JPanel {
         time.append(cal.get(Calendar.DATE)+" ");
         time.append(this.getMonthName(cal.get(Calendar.MONTH)) + " ");
         time.append(cal.get(Calendar.YEAR));
-        System.out.println(time);
         return time.toString();
     }
 
